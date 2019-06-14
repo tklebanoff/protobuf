@@ -19,6 +19,8 @@ endif()
 # Project
 project(protobuf C CXX)
 
+include(CTest)
+
 # Add c++11 flags
 if (CYGWIN)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
