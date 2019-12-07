@@ -46,7 +46,6 @@
 #include <google/protobuf/wire_format.h>
 #include <google/protobuf/stubs/strutil.h>
 
-
 namespace google {
 namespace protobuf {
 namespace compiler {
@@ -221,7 +220,7 @@ void ImmutableEnumFieldGenerator::GenerateBuilderMembers(
         "}\n");
     printer->Annotate("{", "}", descriptor_);
     WriteFieldEnumValueAccessorDocComment(printer, descriptor_, SETTER,
-                               /* builder */ true);
+                                          /* builder */ true);
     printer->Print(variables_,
                    "$deprecation$public Builder "
                    "${$set$capitalized_name$Value$}$(int value) {\n"
@@ -657,7 +656,7 @@ void RepeatedImmutableEnumFieldGenerator::GenerateMembers(
       "      java.lang.Integer, $type$>($name$_, $name$_converter_);\n"
       "}\n");
   printer->Annotate("{", "}", descriptor_);
-  WriteFieldAccessorDocComment(printer, descriptor_, LIST_ADDER);
+  WriteFieldAccessorDocComment(printer, descriptor_, LIST_COUNT);
   printer->Print(
       variables_,
       "$deprecation$public int ${$get$capitalized_name$Count$}$() {\n"
